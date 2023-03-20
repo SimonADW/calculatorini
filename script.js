@@ -12,3 +12,9 @@ const subtract = function(numB) {
     numA -= numB;     
     return numA;
 }
+
+const multiply = function(numB) {
+    numA *= numB;     
+    return numA;
+}
+
