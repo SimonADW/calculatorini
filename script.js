@@ -8,3 +8,7 @@ const add = function(numB) {
     return numA;
 }
 
+const subtract = function(numB) {
+    numA -= numB;     
+    return numA;
+}
