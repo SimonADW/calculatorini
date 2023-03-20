@@ -18,3 +18,8 @@ const multiply = function(numB) {
     return numA;
 }
 
+const divide = function(numB) {
+    numA /= numB;     
+    return numA;
+}
+
