@@ -1,9 +1,10 @@
 
-const numA = 0
-const numB = 0
-const operator = ''
+let numA = 0
+let numB = 0
+let operator = ''
 
-const function add(numA, numB) {
-    return numA + numB;    
+const add = function(numB) {
+    numA += numB;     
+    return numA;
 }
 
