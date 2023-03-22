@@ -1,7 +1,83 @@
-*. {
+* {
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-     
+    display: flex;
+    justify-content: center;
 }
+
+.containerMain {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+
+
+.calcOuter {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 220px;
+    height: auto;
+}
+
+.containerDisplay {
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    margin: 10px;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+#displayMain {
+    font-size: 40px;
+
+}
+.containerButtons {
+    display: grid;
+    align-self: center;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    margin-bottom: 10px;
+    gap: 2px;
+
+    grid-template-areas: 
+        "ac ac . ."
+        ". . . multi"
+        ". . . subtract"
+        ". . . add"
+        ". . sum sum"
+}
+
+button {
+    background-color: bisque;
+    border-style: none;
+}
+
+#acButton {
+    grid-area: ac; 
+}
+
+#opButtonSum {
+    grid-area: sum;
+    background-color:rgb(180, 207, 198);
+}
+
+#opButtonAdd {
+    grid-area: add;
+}
+
+#opButtonSubtract {
+    grid-area: subtract;
+}
+
+#opButtonMultiply {
+    grid-area: multi;
+}
+
