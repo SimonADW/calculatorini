@@ -23,18 +23,18 @@ const divide = function(numB) {
     return numA;
 }
 
-// const operate = function(numA, operator, numB) {
-    
-//     if (operator == '+') {
-//         return add(numB);        
-//     } else if (operator == '-') {
-//         subtract(numA,numB);        
-//     } else if (operator == '*') {
-//         multiply(numA,numB);        
-//     } else if (operator == '/') {
-//         divide(numA,numB);        
-//     } else {
-//         return "Error; unknown operator"; 
-//     }
-//     return numA;
-// }
+const operate = function(operateA, operator, operateB) {
+    numA = operateA;    
+    if (operator == '+') {
+        return add(operateB);        
+    } else if (operator == '-') {
+        subtract(operateB);        
+    } else if (operator == '*') {
+        multiply(operateB);        
+    } else if (operator == '/') {
+        divide(operateB);        
+    } else {
+        return "Error; unknown operator"; 
+    }
+    return numA;
+}
