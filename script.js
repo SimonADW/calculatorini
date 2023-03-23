@@ -1,8 +1,9 @@
-
+let displayValue = ''
 var numA = 0;
 var numB = 0;
 var operator = 0;
 
+// calculate functions //
 const add = function(numB) {
     numA += numB;     
     return numA;
@@ -23,6 +24,7 @@ const divide = function(numB) {
     return numA;
 }
 
+// operate function // 
 const operate = function(operateA, operator, operateB) {
     numA = operateA;    
     if (operator == '+') {
@@ -38,3 +40,16 @@ const operate = function(operateA, operator, operateB) {
     }
     return numA;
 }
+
+// Register clicks
+let btns = document.querySelectorAll('button');
+
+btns.forEach(function (i) {
+    i.addEventListener('click', function() {
+        displayValue += i.textContent;
+        document.getElementById('displayMain').textContent = displayValue;
+    });
+});
+
+
+
