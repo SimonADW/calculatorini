@@ -1,4 +1,7 @@
-let displayValue = ''
+let displayValue = '';
+let opValue = '';
+let bankValue = '';
+
 var numA = 0;
 var numB = 0;
 var operator = 0;
@@ -26,30 +29,50 @@ const divide = function(numB) {
 
 // operate function // 
 const operate = function(operateA, operator, operateB) {
-    numA = operateA;    
+    numA = Number(operateA);        
     if (operator == '+') {
-        return add(operateB);        
+        return add(Number(operateB));        
     } else if (operator == '-') {
-        subtract(operateB);        
+        subtract(Number(operateB));        
     } else if (operator == '*') {
-        multiply(operateB);        
+        multiply(Number(operateB));        
     } else if (operator == '/') {
-        divide(operateB);        
+        divide(Number(operateB));     
     } else {
         return "Error; unknown operator"; 
     }
     return numA;
 }
 
-// Register clicks
-let btns = document.querySelectorAll('button');
+// Register numberclicks
+let btnsNum = document.querySelectorAll('.numButton');
 
-btns.forEach(function (i) {
+btnsNum.forEach(function (i) {
     i.addEventListener('click', function() {
+        displayValue = '';
         displayValue += i.textContent;
-        document.getElementById('displayMain').textContent = displayValue;
+        document.getElementById('displayMain').textContent = displayValue;        
     });
 });
+
+// Register operatorclicks 
+let btnsOp = document.querySelectorAll('.opButton');
+
+btnsOp.forEach(function (i) {
+    i.addEventListener('click', function() {
+        opValue = i.textContent;
+        bankValue = displayValue
+        document.getElementById('displayBank').textContent = bankValue;            
+    });
+});
+
+
+// Operate on press =
+let btnSum = document.querySelector('.opButtonSum');
+btnSum.addEventListener('click', function() { 
+    displayValue = operate(bankValue,opValue,displayValue);
+    document.getElementById('displayMain').textContent = displayValue;    
+    });
 
 
 
