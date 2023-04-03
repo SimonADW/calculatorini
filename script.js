@@ -75,4 +75,12 @@ btnSum.addEventListener('click', function() {
     });
 
 
+// All Clear click and function
+let btnAC = document.querySelector('#acButton');
+btnAC.addEventListener('click', function() { 
+    bankValue = '';
+    displayValue = 0;
+    document.getElementById('displayMain').textContent = displayValue;    
+    document.getElementById('displayBank').textContent = bankValue;            
+});
 
