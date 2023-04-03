@@ -36,7 +36,7 @@ const operate = function(operateA, operator, operateB) {
         subtract(Number(operateB));        
     } else if (operator == '*') {
         multiply(Number(operateB));        
-    } else if (operator == '/') {
+    } else if (operator == '÷') {
         divide(Number(operateB));     
     } else {
         return "Error; unknown operator"; 
