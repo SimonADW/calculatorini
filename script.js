@@ -49,30 +49,47 @@ let btnsNum = document.querySelectorAll('.numButton');
 
 btnsNum.forEach(function (i) {
     i.addEventListener('click', function() {
-        
+        displayValue === 0 ? displayValue = '' : false;
         displayValue += i.textContent;
         document.getElementById('displayMain').textContent = displayValue;        
     });
 });
+
+// Register and limit dot-clicks (NOT COMPLETE, ONCE:TRUE IS PERMANENT?)
+let btnDot = document.querySelector('#numButtonDot');
+
+btnDot.addEventListener('click', function() {        
+    displayValue += '.';
+    document.getElementById('displayMain').textContent = displayValue;        
+    },{once: true});
+
+
 
 // Register operatorclicks 
 let btnsOp = document.querySelectorAll('.opButton');
 
 btnsOp.forEach(function (i) {
     i.addEventListener('click', function() {
-        opValue = i.textContent;
-        bankValue = displayValue
+        if (!bankValue) {
+            bankValue = displayValue;
+        } else { 
+            bankValue = operate(bankValue,opValue,displayValue);    
+        };
         document.getElementById('displayBank').textContent = bankValue;  
+        opValue = i.textContent;
         displayValue = '';          
     });
 });
+
 
 
 // Operate on press =
 let btnSum = document.querySelector('.opButtonSum');
 btnSum.addEventListener('click', function() { 
     displayValue = operate(bankValue,opValue,displayValue);
+    bankValue = 0;
     document.getElementById('displayMain').textContent = displayValue;    
+    document.getElementById('displayBank').textContent = bankValue;            
     });
 
 
