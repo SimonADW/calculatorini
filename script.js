@@ -88,7 +88,7 @@ let btnSum = document.querySelector('.opButtonSum');
 btnSum.addEventListener('click', function() { 
     displayValue = operate(bankValue,opValue,displayValue);
     bankValue = 0;
-    document.getElementById('displayMain').textContent = displayValue;    
+    document.getElementById('displayMain').textContent = displayValue.toFixed(4);    
     document.getElementById('displayBank').textContent = bankValue;            
     });
 
