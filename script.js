@@ -49,7 +49,7 @@ let btnsNum = document.querySelectorAll('.numButton');
 
 btnsNum.forEach(function (i) {
     i.addEventListener('click', function() {
-        displayValue = '';
+        
         displayValue += i.textContent;
         document.getElementById('displayMain').textContent = displayValue;        
     });
@@ -62,7 +62,8 @@ btnsOp.forEach(function (i) {
     i.addEventListener('click', function() {
         opValue = i.textContent;
         bankValue = displayValue
-        document.getElementById('displayBank').textContent = bankValue;            
+        document.getElementById('displayBank').textContent = bankValue;  
+        displayValue = '';          
     });
 });
 
